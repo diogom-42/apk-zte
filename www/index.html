@@ -1,21 +1,242 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-    </head>
 
-    <body>
+<head>
 
-    <p>
-    <button id="startScan">Start Scan</button>
-    </p>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <div id="results"></div>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+    <style>
+        body {
+
+
+            background-color: #919191;
+            -webkit-font-smoothing: antialiased;
+            font: normal 14px Roboto, arial, sans-serif;
+        }
+
+        input[type=text]:focus,
+        textarea:focus {
+            box-shadow: 0 0 5px #28a745;
+            padding: 3px 0px 3px 3px;
+            margin: 5px 1px 3px 0px;
+            border: 1px solid #28a745;
+        }
+
+        input[type=text] {
+            text-align: center;
+
+        }
+
+        .container {
+            width: 400px;
+            height: 150px;
+            left: 50%;
+            margin: -130px 0 0 -210px;
+            padding: 10px;
+            position: absolute;
+            top: 50%;
+
+        }
+
+        .row {
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .col-md-offset-5 {
+            flex: 0 0 70%;
+            max-width: 100%;
+        }
+
+        .form-login {
+            background-color: #EDEDED;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 15px;
+            border-color: #d2d2d2;
+            border-width: 5px;
+            box-shadow: 0 1px 0 #cfcfcf;
+
+        }
+
+        h4 {
+            border: 0 solid #fff;
+            border-bottom-width: 1px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .wrapper {
+            text-align: center;
+        }
+    </style>
+
+
+
+
+
+    <script>
+
+
+        function hexToDec(hex) {
+
+            var n = 256;
+            var hex = document.getElementById('mac').value.replace(/:/g, "");
+            var hex2 = document.getElementById('mac').value.toLowerCase();
+
+
+            //var resultado = hex.substr(0,2)+":"+hex.substr(2,2)+":"+hex.substr(4,2)+":"+hex.substr(6,2)+":"+hex.substr(8,2)+":"+hex.substr(10,2);
+            var result = 0, digitValue;
+            hex = hex.toLowerCase();
+            for (var i = 0; i < hex.length; i++) {
+                digitValue = '0123456789abcdefgh'.indexOf(hex[i]);
+                result = result * 16 + digitValue;
+            }
+
+            var divExibir = document.getElementById("divExibir")
+
+            var serial = document.getElementById('serial').value.toUpperCase();
+
+            divExibir.innerHTML += "setmac 1 768 2C957F <br>";
+            divExibir.innerHTML += "setmac 1 512 " + serial + "<br>";
+            divExibir.innerHTML += "setmac 1 2180 " + serial + "<br>";
+            divExibir.innerHTML += "setmac 1 2177 " + serial.replace("ZTEG", "") + "<br>";
+            divExibir.innerHTML += "setmac 1 2178 " + serial.replace("ZTE", "") + "<br>";
+            divExibir.innerHTML += "setmac 1 256 " + hex2 + "<br>";
+
+            for (let i = 0; i < 7; i++) {
+                result += 1
+                n += 1
+
+                var valor = (result).toString(16)
+                var r = /([a-f0-9]{2})([a-f0-9]{2})/i,
+                    str = valor.replace(/[^a-f0-9]/ig, "");
+
+                while (r.test(str)) {
+                    str = str.replace(r, '$1' + ':' + '$2');
+                }
+
+                divExibir.innerHTML += "setmac 1 " + n + " " + str + '<br>';
+            }
+
+            divExibir.innerHTML += "setmac 1 2193 0 <br>";
+            divExibir.innerHTML += "setmac 1 2176 ZTEG <br>";
+            divExibir.innerHTML += "setmac 1 1537 admin <br>";
+            divExibir.innerHTML += "setmac 1 1793 admin <br>";
+            divExibir.innerHTML += "setmac 1 32770 5:F660 <br>";
+            divExibir.innerHTML += "setmac 1 2054 34 <br>";
+            divExibir.innerHTML += "reboot <br>";
+
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-5 col-md-3">
+                <div class="form-login">
+                    <h4>Script ZTE</h4>
+                    <input type="text" id="mac" name="mac" class="form-control input-sm chat-input" placeholder="Insira o MAC"/>
+                    </br>
+                    <input type="text" id="serial" class="form-control input-sm chat-input" placeholder="Insira o Serial" />
+                    </br>
+                    <div class="wrapper">
+                        <span class="group-btn">
+                            <div id="divExibir"></div>
+                            <input type="button" class="btn btn-success" onclick="hexToDec()" value="Executar"></input>
+                            <button class="btn btn-success" data-clipboard-action="copy" data-clipboard-target="#divExibir">Copiar</button>
+
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- jQuery library -->
+<script src="js/jquery.min.js"></script>
+
+<!-- Popper -->
+<script src="js/popper.min.js"></script>
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+
+ <script src="js/index.js"></script>
+
+
+<!-- Initialize Bootstrap functionality -->
+<script>
+    // Initialize tooltip component
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    // Initialize popover component
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+
+    $(function () {
+        var regexp = /^(([A-Fa-f0-9]{2}[:]){5}[A-Fa-f0-9]{2}?)+$/i;
+
+        $("#mac").on("input", function (e) {
+            var tb = $(this);
+            var val = tb.val().replace(/[^a-f0-9]/ig, "");
+            var r = /([a-f0-9]{2})([a-f0-9]{2})/i;
+            while (r.test(val)) {
+                val = val.replace(r, '$1' + ':' + '$2');
+            }
+            val = val.slice(0, 17);
+            tb.val(val);
+            tb.toggleClass("badMac", !regexp.test(tb.val()));
+        });
+        $("#serial").on("input", function (e) {
+            var tb2 = $(this);
+            var val2 = tb2.val()
+
+            val2 = val2.slice(0, 12);
+            tb2.val(val2);
+            tb2.toggleClass(tb2.val());
+        });
+    });
+
+    $(document).ready(function () {
+        $('#mac').val(s);
+
+        $('#serial').val(s2);
+    });
+    /*
+    <script src="node_modules/clipboard/dist/clipboard.js">
+
+    var clipboard = new ClipboardJS('.btn');
+    clipboard.on('success', function (e) {
+        alert("Script copiado");
+        location.reload();
+    });
+    clipboard.on('error', function (e) {
+        alert("Não copiado");
+    });
+*/
+  
+</script>
+
 </html>
