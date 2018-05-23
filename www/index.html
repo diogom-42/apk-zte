@@ -84,8 +84,17 @@
 
 
 
+<script src="/node_modules/clipboard/dist/clipboard.js"></script>
 
     <script>
+         var clipboard = new ClipboardJS('.btn');
+    clipboard.on('success', function (e) {
+        alert("Script copiado");
+        location.reload();
+    });
+    clipboard.on('error', function (e) {
+        alert("Não copiado");
+    });
 
 
         function hexToDec(hex) {
@@ -180,7 +189,6 @@
 <!-- Latest compiled and minified Bootstrap JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<script src="/node_modules/clipboard/dist/clipboard.js"></script>
 
  <script src="js/index.js"></script>
 
@@ -227,14 +235,7 @@
         $('#serial').val(s2);
     });
 
-    var clipboard = new ClipboardJS('.btn');
-    clipboard.on('success', function (e) {
-        alert("Script copiado");
-        location.reload();
-    });
-    clipboard.on('error', function (e) {
-        alert("Não copiado");
-    });
+   
 
   
 </script>

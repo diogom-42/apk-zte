@@ -1,22 +1,26 @@
 {
-    "name": "com.example.zte",
-    "displayName": "APK-ZTE",
-    "version": "1.0.0",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Apache Cordova Team",
-    "license": "Apache-2.0",
-    "dependencies": {
-        "clipboard": "^2.0.1",
-        "cordova-plugin-compat": "^1.2.0",
-        "phonegap-plugin-barcodescanner": "^6.0.8"
-    },
-    "cordova": {
-        "plugins": {
-            "phonegap-plugin-barcodescanner": {}
-        }
+  "name": "com.example.zte",
+  "displayName": "APK-ZTE",
+  "version": "1.0.0",
+  "description":
+    "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "clipboard": "^2.0.1",
+    "good-listener": "^1.2.2",
+    "select": "^1.1.2",
+    "tiny-emitter": "^2.0.0",
+    "cordova-plugin-compat": "^1.2.0",
+    "phonegap-plugin-barcodescanner": "^6.0.8"
+  },
+  "cordova": {
+    "plugins": {
+      "phonegap-plugin-barcodescanner": {}
     }
+  }
 }
