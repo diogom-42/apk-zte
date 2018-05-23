@@ -19,8 +19,7 @@
   },
   "cordova": {
     "plugins": {
-      "phonegap-plugin-barcodescanner": {},
-      "com.danielsogl.cordova.clipboard": {}
+      "phonegap-plugin-barcodescanner": {}
     }
   }
 }

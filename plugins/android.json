@@ -1,25 +1,25 @@
 {
-  "prepare_queue": {
-    "installed": [],
-    "uninstalled": []
-  },
-  "config_munge": {
-    "files": {}
-  },
-  "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.example.zte"
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
     },
-    "phonegap-plugin-barcodescanner": {
-      "PACKAGE_NAME": "com.example.zte"
+    "config_munge": {
+        "files": {}
     },
-    "com.danielsogl.cordova.clipboard": {
-      "PACKAGE_NAME": "com.example.zte"
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.zte"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.example.zte"
+        },
+        "com.verso.cordova.clipboard": {
+            "PACKAGE_NAME": "com.example.zte"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.example.zte"
+        }
     }
-  },
-  "dependent_plugins": {
-    "cordova-plugin-compat": {
-      "PACKAGE_NAME": "com.example.zte"
-    }
-  }
 }
