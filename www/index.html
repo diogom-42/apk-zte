@@ -157,9 +157,9 @@
                     </br>
                     <div class="wrapper">
                         <span class="group-btn">
-                            <div id="divExibir" class="divExibir"></div>
+                            <er id="divExibir" class="divExibir"></er>
                             <input type="button" class="btn btn-success" onclick="hexToDec()" value="Executar"></input>
-                            <button>Copiar</button>
+                            <button id="FailCopy" type="button" onclick="copyToClipboard('er#error-details')">Copiar</button>                       
                         </span>
                     </div>
                 </div>
@@ -228,24 +228,18 @@
         $('#serial').val(s2);
     });
 
-$(function(){
-    // Executa o evento click no button
-    $('button').click(function(){
-        // Seleciona o conteúdo do input
-        $('.divExibir').select();
-        // Copia o conteudo selecionado
-        var copiar = document.execCommand('copy');
-        // Verifica se foi copia e retona mensagem
-        if(copiar){
-            alert('Copiado');
-        }else {
-            alert('Erro ao copiar, seu navegador pode não ter suporte a essa função.');
-        };
-        // Cancela a execução do formulário
-        return false;
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  var brRegex = /<br\s*[\/]?>/gi;
+  $("body").append($temp);
+  $temp.val($(element).html().replace(brRegex, "\r\n")).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+$( "#FailCopy" ).click(function() {
+  alert("Script Copiado");
 });
 
-});
 
   
 </script>
