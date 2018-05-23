@@ -21,9 +21,6 @@ function startScan() {
 		}, 
 		function (error) {
 			alert("Scanning failed: " + error);
-		},
-		{
-			
 		}
     );
 
@@ -49,10 +46,8 @@ function startScan2() {
 		}, 
 		function (error) {
 			alert("Scanning failed: " + error);
-		},
-		{
-			
 		}
+		
     );
 
 
