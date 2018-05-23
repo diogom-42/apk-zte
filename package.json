@@ -13,6 +13,7 @@
     "cordova-plugin-compat": "^1.2.0",
     "danielsogl-cordova-plugin-clipboard": "^1.0.2",
     "good-listener": "^1.2.2",
+    "material-design-icons": "^3.0.1",
     "phonegap-plugin-barcodescanner": "^6.0.8",
     "select": "^1.1.2",
     "tiny-emitter": "^2.0.0"
