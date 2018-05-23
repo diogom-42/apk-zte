@@ -84,18 +84,10 @@
 
 
 
-<script src="/node_modules/clipboard/dist/clipboard.js"></script>
+
 
     <script>
-         var clipboard = new ClipboardJS('.btn');
-    clipboard.on('success', function (e) {
-        alert("Script copiado");
-        location.reload();
-    });
-    clipboard.on('error', function (e) {
-        alert("Não copiado");
-    });
-
+ 
 
         function hexToDec(hex) {
 
@@ -167,8 +159,7 @@
                         <span class="group-btn">
                             <div id="divExibir"></div>
                             <input type="button" class="btn btn-success" onclick="hexToDec()" value="Executar"></input>
-                            <button class="btn btn-success" data-clipboard-action="copy" data-clipboard-target="#divExibir">Copiar</button>
-
+                            <button onclick="copiar()">Copiar</button>
                         </span>
                     </div>
                 </div>
@@ -235,7 +226,11 @@
         $('#serial').val(s2);
     });
 
-   
+function copiar (){
+
+cordova.plugins.clipboard.copy('#divExibir');
+
+}
 
   
 </script>

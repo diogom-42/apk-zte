@@ -1,0 +1,68 @@
+{
+  "_from": "danielsogl-cordova-plugin-clipboard@^1.0.2",
+  "_id": "danielsogl-cordova-plugin-clipboard@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-OmSCkRfI26/e2hwXWT4Sb/ScvZQqJ8ovqizETpLvfUbUifvoEf0WMElsc2qTgF9aORdFNDFqZ20a2iZ9koWdTQ==",
+  "_location": "/danielsogl-cordova-plugin-clipboard",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "danielsogl-cordova-plugin-clipboard@^1.0.2",
+    "name": "danielsogl-cordova-plugin-clipboard",
+    "escapedName": "danielsogl-cordova-plugin-clipboard",
+    "rawSpec": "^1.0.2",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.2"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/danielsogl-cordova-plugin-clipboard/-/danielsogl-cordova-plugin-clipboard-1.0.2.tgz",
+  "_shasum": "79fa9975c058da9e527100771df983278da00b33",
+  "_spec": "danielsogl-cordova-plugin-clipboard@^1.0.2",
+  "_where": "/home/diogom/Projeto/apk-zte",
+  "author": {
+    "name": "Daniel Sogl"
+  },
+  "bugs": {
+    "url": "https://github.com/danielsogl/cordova-plugin-clipboard/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "com.danielsogl.cordova.clipboard",
+    "platforms": [
+      "ios",
+      "android",
+      "wp8",
+      "windows"
+    ]
+  },
+  "deprecated": false,
+  "description": "Clipboard management plugin for Cordova/PhoneGap",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=4.0.0"
+    }
+  ],
+  "homepage": "https://github.com/danielsogl/cordova-plugin-clipboard#readme",
+  "keywords": [
+    "clipboard",
+    "copy",
+    "paste",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "cordova-wp8",
+    "cordova-windows"
+  ],
+  "license": "MIT",
+  "name": "danielsogl-cordova-plugin-clipboard",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielsogl/cordova-plugin-clipboard.git"
+  },
+  "version": "1.0.2"
+}

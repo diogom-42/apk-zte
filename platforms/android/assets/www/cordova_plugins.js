@@ -7,6 +7,14 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.barcodeScanner"
         ]
+    },
+    {
+        "id": "com.danielsogl.cordova.clipboard.Clipboard",
+        "file": "plugins/com.danielsogl.cordova.clipboard/www/clipboard.js",
+        "pluginId": "com.danielsogl.cordova.clipboard",
+        "clobbers": [
+            "cordova.plugins.clipboard"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -14,7 +22,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-compat": "1.2.0",
-    "phonegap-plugin-barcodescanner": "6.0.8"
+    "phonegap-plugin-barcodescanner": "6.0.8",
+    "com.danielsogl.cordova.clipboard": "1.0.2"
 };
 // BOTTOM OF METADATA
 });
