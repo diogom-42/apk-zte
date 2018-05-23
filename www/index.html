@@ -111,7 +111,7 @@
             divExibir.innerHTML += "setmac 1 2180 " + serial + "<br>";
             divExibir.innerHTML += "setmac 1 2177 " + serial.replace("ZTEG", "") + "<br>";
             divExibir.innerHTML += "setmac 1 2178 " + serial.replace("ZTE", "") + "<br>";
-            divExibir.innerHTML += "setmac 1 256 " + hex + "<br>";
+            divExibir.innerHTML += "setmac 1 256 " + result + "<br>";
 
             for (let i = 0; i < 7; i++) {
                 result += 1
@@ -149,7 +149,13 @@
             <div class="col-md-offset-5 col-md-3">
                 <div class="form-login">
                     <h4>Script ZTE</h4>
-                    <input type="text" id="mac" name="mac" class="form-control input-sm chat-input" placeholder="Insira o MAC" />
+                    <div class="input-group">
+                            <input type="text" id="mac" name="mac" class="form-control input-sm chat-input" placeholder="Insira o MAC" />
+                            <div class="input-group-btn">
+                              <!-- Buttons -->
+                              <button class="btn btn-default" type="button" id="go">Go!</button>
+                            </div>
+                          </div>
                     </br>
                     <input type="text" id="serial" class="form-control input-sm chat-input" placeholder="Insira o Serial" />
                     </br>
