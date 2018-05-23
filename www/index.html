@@ -87,7 +87,6 @@
 
 
     <script>
- 
 
         function hexToDec(hex) {
 
@@ -151,15 +150,15 @@
             <div class="col-md-offset-5 col-md-3">
                 <div class="form-login">
                     <h4>Script ZTE</h4>
-                    <input type="text" id="mac" name="mac" class="form-control input-sm chat-input" placeholder="Insira o MAC"/>
+                    <input type="text" id="mac" name="mac" class="form-control input-sm chat-input" placeholder="Insira o MAC" />
                     </br>
                     <input type="text" id="serial" class="form-control input-sm chat-input" placeholder="Insira o Serial" />
                     </br>
                     <div class="wrapper">
                         <span class="group-btn">
-                            <er id="divExibir" class="divExibir"></er>
+                            <p id="divExibir"></p>
                             <input type="button" class="btn btn-success" onclick="hexToDec()" value="Executar"></input>
-                            <button id="FailCopy" type="button" onclick="copyToClipboard('er#error-details')">Copiar</button>                       
+                            <button class="btn btn-success" onclick="copyToClipboard('p')">Copiar</button>
                         </span>
                     </div>
                 </div>
@@ -181,8 +180,8 @@
 <script src="js/bootstrap.min.js"></script>
 
 
- <script src="js/index.js"></script>
-  <script src="/plugins/com.verso.cordova.clipboard/www/clipboard.js"></script>
+<script src="js/index.js"></script>
+<script src="/plugins/com.verso.cordova.clipboard/www/clipboard.js"></script>
 
 
 
@@ -228,20 +227,19 @@
         $('#serial').val(s2);
     });
 
-function copyToClipboard(element) {
-  var $temp = $("<textarea>");
-  var brRegex = /<br\s*[\/]?>/gi;
-  $("body").append($temp);
-  $temp.val($(element).html().replace(brRegex, "\r\n")).select();
-  document.execCommand("copy");
-  $temp.remove();
-}
-$( "#FailCopy" ).click(function() {
-  alert("Script Copiado");
-});
+    function copyToClipboard(element) {
+        var text = $(element).clone().find('br').prepend('\r\n').end().text()
+        element = $('<textarea>').appendTo('body').val(text).select()
+        document.execCommand('copy')
+        element.remove()
+        alert("Script Copiado")
+        location.reload();
+
+    }
 
 
-  
+
+
 </script>
 
 </html>
