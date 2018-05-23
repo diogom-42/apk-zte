@@ -183,6 +183,8 @@
 
  <script src="js/index.js"></script>
   <script src="/plugins/com.verso.cordova.clipboard/www/clipboard.js"></script>
+  <script src="/node_modules/clipboard/dist/clipboard.js"></script>
+
 
 
 
@@ -232,8 +234,15 @@ $(function(){
     // Executa o evento click no button
     $('button').click(function(){
         // Seleciona o conteúdo do input
-        linha = $("#divExibir").html();
-        cordova.plugins.clipboard.copy(linha);
+        var clipboard = new ClipboardJS('.btn');
+    clipboard.on('success', function (e) {
+        alert("Script copiado");
+        location.reload();
+    });
+    clipboard.on('error', function (e) {
+        alert("Não copiado");
+    });
+
 });
 
 });
