@@ -5,7 +5,7 @@ var resultSerial;
 document.addEventListener("deviceready", init, false);
 
 function init() {
-	document.querySelector("#go").addEventListener("touchend", startScan, false);
+	document.querySelector("#macGo").addEventListener("touchend", startScan, false);
     resultMac = document.querySelector("#mac");
 
 }
@@ -31,7 +31,7 @@ document.addEventListener("deviceready", init2, false);
 
 function init2() {
 
-    document.querySelector("#serial").addEventListener("touchend", startScan2, false);
+    document.querySelector("#serialGo").addEventListener("touchend", startScan2, false);
 	resultSerial = document.querySelector("#serial");
 }
 
