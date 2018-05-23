@@ -229,9 +229,9 @@
     });
 
 function copiar (){
-    var copy = document.getElementById("divExibir").innerHTML
+    var valorDaDiv = $("divExibir").text();    
 
-cordova.plugins.clipboard.copy(copy);
+cordova.plugins.clipboard.copy(valorDaDiv);
 
 }
 
