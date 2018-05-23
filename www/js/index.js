@@ -16,7 +16,6 @@ function startScan() {
 		function (result) {
 			var s = result.text
             resultMac.innerHTML = s;
-            alert(s);
             $('#mac').val(s);
 
 		}, 
@@ -42,7 +41,6 @@ function startScan2() {
 		function (result) {
 			var s2 = result.text
             resultSerial.innerHTML = s2;
-            alert(s2);
             $('#serial').val(s2);
 
 		}, 
