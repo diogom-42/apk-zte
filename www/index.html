@@ -229,8 +229,9 @@
     });
 
 function copiar (){
+    var copy = document.getElementById("divExibir").innerHTML
 
-cordova.plugins.clipboard.copy('#divExibir');
+cordova.plugins.clipboard.copy(copy);
 
 }
 
