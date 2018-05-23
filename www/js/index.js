@@ -21,6 +21,13 @@ function startScan() {
 		}, 
 		function (error) {
 			alert("Scanning failed: " + error);
+		},
+		{
+			showTorchButton : true, // iOS and Android
+			torchOn: true, // Android, launch with the torch switched on (if available)
+			prompt : "Place a barcode inside the scan area", // Android
+			resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+			disableSuccessBeep: false // iOS and Android
 		}
     );
 
@@ -46,6 +53,13 @@ function startScan2() {
 		}, 
 		function (error) {
 			alert("Scanning failed: " + error);
+		},
+		{
+			showTorchButton : true, // iOS and Android
+			torchOn: true, // Android, launch with the torch switched on (if available)
+			prompt : "Place a barcode inside the scan area", // Android
+			resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+			disableSuccessBeep: false // iOS and Android
 		}
     );
 

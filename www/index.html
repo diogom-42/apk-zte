@@ -92,7 +92,6 @@
 
             var n = 256;
             var hex = document.getElementById('mac').value.replace(/:/g, "");
-            var hex2 = document.getElementById('mac').value.toLowerCase();
 
 
             //var resultado = hex.substr(0,2)+":"+hex.substr(2,2)+":"+hex.substr(4,2)+":"+hex.substr(6,2)+":"+hex.substr(8,2)+":"+hex.substr(10,2);
@@ -112,7 +111,7 @@
             divExibir.innerHTML += "setmac 1 2180 " + serial + "<br>";
             divExibir.innerHTML += "setmac 1 2177 " + serial.replace("ZTEG", "") + "<br>";
             divExibir.innerHTML += "setmac 1 2178 " + serial.replace("ZTE", "") + "<br>";
-            divExibir.innerHTML += "setmac 1 256 " + hex2 + "<br>";
+            divExibir.innerHTML += "setmac 1 256 " + hex + "<br>";
 
             for (let i = 0; i < 7; i++) {
                 result += 1
