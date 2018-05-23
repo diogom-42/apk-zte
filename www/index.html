@@ -101,6 +101,13 @@
                 digitValue = '0123456789abcdefgh'.indexOf(hex[i]);
                 result = result * 16 + digitValue;
             }
+            var valor = (result).toString(16)
+                var r = /([a-f0-9]{2})([a-f0-9]{2})/i,
+                    str = valor.replace(/[^a-f0-9]/ig, "");
+
+                while (r.test(str)) {
+                    str = str.replace(r, '$1' + ':' + '$2');
+                }
 
             var divExibir = document.getElementById("divExibir")
 
@@ -111,7 +118,7 @@
             divExibir.innerHTML += "setmac 1 2180 " + serial + "<br>";
             divExibir.innerHTML += "setmac 1 2177 " + serial.replace("ZTEG", "") + "<br>";
             divExibir.innerHTML += "setmac 1 2178 " + serial.replace("ZTE", "") + "<br>";
-            divExibir.innerHTML += "setmac 1 256 " + result + "<br>";
+            divExibir.innerHTML += "setmac 1 256 " + str + "<br>";
 
             for (let i = 0; i < 7; i++) {
                 result += 1
