@@ -157,7 +157,7 @@
                     </br>
                     <div class="wrapper">
                         <span class="group-btn">
-                            <div id="divExibir"></div>
+                            <div id="divExibir" class="divExibir"></div>
                             <input type="button" class="btn btn-success" onclick="hexToDec()" value="Executar"></input>
                             <button onclick="copiar()">Copiar</button>
                         </span>
@@ -229,7 +229,7 @@
     });
 
 function copiar (){
-    var valorDaDiv = $("divExibir").text();    
+    var valorDaDiv = $(".divExibir").text();    
 
 cordova.plugins.clipboard.copy(valorDaDiv);
 
