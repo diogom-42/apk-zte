@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
-<preference name="phonegap-version" value="cli-6.2.0" />
 <widget id="com.example.zte" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>VelloZTE</name>
     <description>
@@ -18,6 +17,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
+    <preference name="phonegap-version" value="cli-6.2.0" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="res/icon/android/icon1.png"/>
         <icon density="mdpi" src="$res/icon/android/icon1.png" />
